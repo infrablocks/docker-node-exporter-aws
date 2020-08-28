@@ -9,6 +9,8 @@ RUN cd /tmp \
     && tar -xvf "node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz" \
     && mkdir -p /opt/node-exporter \
     && cp -R "node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64"/* /opt/node-exporter \
+    && mkdir -p /opt/node-exporter/bin \
+    && mv /opt/node-exporter/node_exporter /opt/node-exporter/bin/ \
     && rm "node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz" \
     && rm -rf "node_exporter-${PROMETHEUS_VERSION}.linux-amd64" \
     && cd /
