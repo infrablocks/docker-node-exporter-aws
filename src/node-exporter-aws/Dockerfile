@@ -2,6 +2,12 @@ FROM infrablocks/alpine-aws-s3-config:0.20.0
 
 ENV NODE_EXPORTER_VERSION="1.0.1"
 
+RUN apk \
+    --verbose \
+    --no-cache \
+    add \
+        su-exec
+
 RUN cd /tmp \
     && curl \
         -L "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz" \
