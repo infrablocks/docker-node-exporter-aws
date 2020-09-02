@@ -21,8 +21,6 @@ RUN cd /tmp \
     && rm -rf "node_exporter-${PROMETHEUS_VERSION}.linux-amd64" \
     && cd /
 
-EXPOSE 9001
-
 COPY start.sh /opt/node-exporter/bin/start.sh
 
 RUN chmod +x /opt/node-exporter/bin/start.sh
