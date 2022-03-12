@@ -220,7 +220,7 @@ describe 'entrypoint' do
             "> #{logfile_path} 2>&1 &")
 
     begin
-      Octopoller.poll(timeout: 15) do
+      Octopoller.poll(timeout: 20) do
         docker_entrypoint_log = command("cat #{logfile_path}").stdout
         docker_entrypoint_log =~ /#{opts[:started_indicator]}/ ?
             docker_entrypoint_log :
