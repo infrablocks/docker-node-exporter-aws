@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'commands' do
   image = 'node-exporter-aws:latest'
   extra = {
-      'Entrypoint' => '/bin/sh',
+    'Entrypoint' => '/bin/sh'
   }
 
   before(:all) do
@@ -14,9 +16,9 @@ describe 'commands' do
 
   after(:all, &:reset_docker_backend)
 
-  it "includes the node_exporter command" do
+  it 'includes the node_exporter command' do
     expect(command('/opt/node-exporter/bin/node_exporter --version').stderr)
-        .to(match(/1.0.1/))
+      .to(match(/1.0.1/))
   end
 
   def reset_docker_backend
