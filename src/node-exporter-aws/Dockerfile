@@ -1,6 +1,6 @@
 FROM infrablocks/alpine-aws-s3-config:0.23.0
 
-ENV NODE_EXPORTER_VERSION="1.0.1"
+ENV NODE_EXPORTER_VERSION="1.5.0"
 
 RUN apk \
     --verbose \

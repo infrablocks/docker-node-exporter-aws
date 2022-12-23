@@ -17,8 +17,8 @@ describe 'commands' do
   after(:all, &:reset_docker_backend)
 
   it 'includes the node_exporter command' do
-    expect(command('/opt/node-exporter/bin/node_exporter --version').stderr)
-      .to(match(/1.0.1/))
+    expect(command('/opt/node-exporter/bin/node_exporter --version').stdout)
+      .to(match(/1.5.0/))
   end
 
   def reset_docker_backend
