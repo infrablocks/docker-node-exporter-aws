@@ -19,7 +19,7 @@ describe 'entrypoint' do
   }
   image = 'node-exporter-aws:latest'
   extra = {
-    'Entrypoint' => '/bin/sh',
+    'Entrypoint' => ['/bin/sh'],
     'HostConfig' => {
       'NetworkMode' => 'docker_node_exporter_aws_test_default'
     }
